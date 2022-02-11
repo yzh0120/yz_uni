@@ -7,7 +7,11 @@
 
 <script>
 	export default{
-		
+		onShow(){
+			this.$Router.pushTab(
+				{ path: '/pages/home/list', query: { plan: 'private' }}
+			)
+		}
 	}
 </script>
 

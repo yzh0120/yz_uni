@@ -7,9 +7,6 @@ https://hhyang.cn/src/router/start/quickstart.html
 npm install uni-simple-router@1.5.5
 
 
-
-
-
 //自动构建路由表
 https://hhyang.cn/src/router/tutorial/rgRoutes.html#%E5%AE%89%E8%A3%85
 npm install uni-read-pages
@@ -19,3 +16,19 @@ npm install uni-read-pages
 import Vue from 'vue'
 import Router, {RouterMount} from 'uni-simple-router';
 Vue.use(Router)
+
+------------------------------------------------------------
+https://hhyang.cn/src/router/start/cross/codeRoute.html
+
+this.$Router.push() 等同于 uni.navigateTo()
+this.$Router.push(
+				{ path: '/pages/home/list', query: { plan: 'private' }}
+			)
+			
+this.$Router.replace() 等同于 uni.redirectTo()
+
+this.$Router.replaceAll() 等同于 uni.reLaunch()
+
+this.$Router.pushTab() 等同于 uni.switchTab()
+
+this.$Router.back(n) 等同于 uni.navigateBack()
