@@ -1,0 +1,21 @@
+https://hhyang.cn/src/router/start/quickstart.html
+
+// 如果您的根目录没有package.json文件的话，请先执行如下命令：
+ npm init -y
+
+// 安装
+npm install uni-simple-router@1.5.5
+
+
+
+
+
+//自动构建路由表
+https://hhyang.cn/src/router/tutorial/rgRoutes.html#%E5%AE%89%E8%A3%85
+npm install uni-read-pages
+
+
+// 项目中引入
+import Vue from 'vue'
+import Router, {RouterMount} from 'uni-simple-router';
+Vue.use(Router)
