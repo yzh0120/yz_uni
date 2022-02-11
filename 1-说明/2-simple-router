@@ -31,4 +31,4 @@ this.$Router.replaceAll() 等同于 uni.reLaunch()
 
 this.$Router.pushTab() 等同于 uni.switchTab()
 
-this.$Router.back(n) 等同于 uni.navigateBack()
+this.$Router.back(n) 等同于 uni.navigateBack()//h5端没有所谓的tabSwitch , 但是此方法依然能够跳转

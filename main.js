@@ -22,6 +22,10 @@ App.mpType = 'app'
 import uView from "uview-ui";
 Vue.use(uView);
 
+// import api from "@/axios/index"
+import  index   from './add/http/index.js'
+Vue.prototype.$api = index
+
 
 const app = new Vue({
 	...App

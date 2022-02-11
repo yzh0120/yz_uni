@@ -242,7 +242,17 @@ var render = function() {
   return _c(
     "div",
     { attrs: { _i: 0 } },
-    [_vm._v("index"), _c("u-button", { attrs: { _i: 1 } })],
+    [
+      _vm._v("index"),
+      _c("u-button", {
+        attrs: { _i: 1 },
+        on: {
+          click: function($event) {
+            return _vm.$handleViewEvent($event)
+          }
+        }
+      })
+    ],
     1
   )
 }
