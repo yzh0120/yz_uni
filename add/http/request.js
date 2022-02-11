@@ -25,7 +25,7 @@ export const api = (options)=>{
 	return new Promise((resolve,reject)=>{
 		uni.request({
 			url:BASE_URL+options.url,                 // 传入的url地址
-			method: options.method || 'get',         //请求方法 默认post
+			method: options.method || 'GET',         //请求方法 默认post
 			data: options.data || {},                 // 请求数据可填可不填 默认空对象
 			header,                                   //头部
 			// timeout

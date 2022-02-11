@@ -4,7 +4,7 @@ export function login(data) {
 	let obj = {
 		url:'/login/userLogin',
 		data:data,
-		method:"post"
+		method:"POST"
 	}
 	return api(obj)
 	
