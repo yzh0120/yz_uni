@@ -27,7 +27,12 @@ import  index   from './add/http/index.js'
 Vue.prototype.$api = index
 
 
+//vuex
+import store from './add/vuex/store.js'
+
+
 const app = new Vue({
+	store,
 	...App
 })
 //v1.3.5起 H5端 你应该去除原有的app.$mount();使用路由自带的渲染方式

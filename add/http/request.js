@@ -83,7 +83,7 @@ const api = (method,url,data,other={})=>{
 						title:res.data.info,
 						duration: 3 * 1000
 					})
-				    reject(res.data)
+				    reject(res.data)//天然响应体
 				}else{
 					resolve(res.data)//之所以不返回 res.data.data  是防止在页面中使用了res.data.!data
 				}
