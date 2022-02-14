@@ -7,45 +7,117 @@
 // 全局请求路径，也就是后端的请求基准路径
 const BASE_URL = 'http://localhost:880'
 
-// 封装请求方法，并向外暴露该方法
-export const api = (options)=>{
+
+//暴露
+export async function post(url, data = {}, other = {}) {
+	let finnally_url = BASE_URL + url;
+    if (other.tip) { //因为会触发catch，所以有tip的请求 必须判断 err 是不是 cancel ，		
+		let res = await uni.showModal({
+			title:"提示",
+			content:other.tip,
+			confirmText:"确定",
+			cancelText:"取消"
+		})
+		if(res[1].confirm){
+			return api('POST', finnally_url, data, other)
+		}else{
+			return Promise.reject("cancel")
+		}
+		
+        
+
+    } else {
+        return api('POST', finnally_url, data, other)
+    }
+}
+
+export async function get(url, data = {}, other = {}) {
+	let finnally_url = BASE_URL + url;
+    if (other.tip) { //因为会触发catch，所以有tip的请求 必须判断 err 是不是 cancel ，		
+		await uni.showModal({
+			title:"提示",
+			content:other.tip,
+			confirmText:"确定",
+			cancelText:"取消"
+		})
+		
+        return api('GET', finnally_url, data, other)
+
+    } else {
+        return api('GET', finnally_url, data, other)
+    }
+}
+
+
+
+
+// 封装请求方法
+const api = (method,url,data,other={})=>{
+	let {
+	    load={text:"加载中..."},//加载对象 , 每次都会使用这个对象 所以必须有默认值,默认的text 是 "正在加载中"
+	    code = {}
+	} = other
+	let {successCode = 200, needSuccessCode = true } = code
+	
+	// 加载操作
+	toggleLoading(load, true)
+	
+	
 	// 请求头默认参数
 	let header = {
 		'Content-Type' : "application/json; charset=utf-8",
 		"Authorization" : "Bearer " + uni.getStorageSync('token')
 	}
-	header = Object.assign(header,options.header)
-	
-	// 显示加载中 效果
-	uni.showLoading({
-		title: "加载中",
-		mask: true,
-	});
+	header = Object.assign(header,data.header)
 	
 	return new Promise((resolve,reject)=>{
 		uni.request({
-			url:BASE_URL+options.url,                 // 传入的url地址
-			method: options.method || 'GET',         //请求方法 默认post
-			data: options.data || {},                 // 请求数据可填可不填 默认空对象
+			url:url,                 // 传入的url地址
+			method: method,         //请求方法 默认post
+			data: data || {},                 // 请求数据可填可不填 默认空对象
 			header,                                   //头部
 			// timeout
 			success: (res)=>{
-				if(res.statusCode !== 200){//如果后台返回的不是 200,则...
-					statusCodeHandler(res.statusCode)
-					reject(err)
+				if (needSuccessCode &&  successCode != res.data.code) {//判断自定义code是否相同
+					uni.showToast({
+						title:res.data.info,
+						duration: 3 * 1000
+					})
+				    reject(res.data)
 				}else{
-					resolve(res)
-				} 
+					resolve(res.data)//之所以不返回 res.data.data  是防止在页面中使用了res.data.!data
+				}
 			},
 			fail: (err)=>{
 				reject(err)
 			},
 			// 完成之后关闭加载效果
 			complete:()=>{
-				uni.hideLoading();//关闭显示
+				// uni.hideLoading();//关闭显示
+				toggleLoading(load, false)
 			}
 		})
 	})
+}
+
+function toggleLoading(load, val){
+	if(load && load.no){
+		return ;
+	}
+	if (load && load.obj) {//例如table的loading
+	    load.loading = load.loading ? load.loading : 'loading'
+	    load.obj[load.loading] = val
+	}else{//整块main区域加载
+		if(val){
+			uni.showLoading({
+				title: load.text,
+				mask: true,
+			});
+		}else{
+			uni.hideLoading();//关闭显示
+		}
+		
+	}
 }
 
 
