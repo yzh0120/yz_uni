@@ -1,7 +1,7 @@
 <template>
 	<div>
 		index
-		<u-button type="primary" text="确定" @click="login"></u-button>
+		<!-- <u-button type="primary" text="确定" @click="login"></u-button> -->
 	</div>
 </template>
 

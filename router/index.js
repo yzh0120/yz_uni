@@ -23,9 +23,9 @@ query: {}
  */
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {
-  
   // console.log(uni.getStorageSync("token"),"uni.getStorageSy")
   if (uni.getStorageSync("token")) { //如果浏览器有token
+
   	// if(true){
   	if (to.path === '/pages/login') { //如果去登录页 直接跳转首页
   		next({path: 'pages/home/index'})

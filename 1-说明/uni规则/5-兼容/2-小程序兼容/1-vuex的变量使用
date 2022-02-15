@@ -1,1 +1,7 @@
-vuex 的变量只支持通过计算属性的方式调用
+1-----------------------------------------
+小程序不支持直接在template中使用 vuex
+computed:{
+			demo(){
+				return this.$store.state.demo.demo
+			}
+},
