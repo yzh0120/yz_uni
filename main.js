@@ -16,7 +16,7 @@ import App from './App'
 import router from './router'
 import { RouterMount } from 'uni-simple-router'
 
-App.mpType = 'app'
+App.mpType = 'app' //会出现再 getApp().$options中
 
 //ui
 import uView from "uview-ui";

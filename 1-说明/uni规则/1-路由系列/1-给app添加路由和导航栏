@@ -1,0 +1,38 @@
+1 - 在 pages.json的pages注册路由
+
+"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/two/index",
+			"style": {
+				"navigationBarTitleText": "第二个页面"
+			}
+		},
+	],
+	
+2 - 在 pages.json的tabBar注册底部导航页
+	"tabBar": {
+		    "color": "#7A7E83",
+		    "selectedColor": "#3cc51f",
+		    "borderStyle": "black",
+		    "backgroundColor": "#ffffff",
+		    "list": [
+				{
+					"pagePath": "pages/one/index",
+					"iconPath": "static/template.png",
+					"selectedIconPath": "static/logo.png",
+					"text": "第一页"
+				},
+				{
+					"pagePath": "pages/two/index",
+					"iconPath": "static/template.png",
+					"selectedIconPath": "static/logo.png",
+					"text": "第二页"
+				}
+			]
+	}

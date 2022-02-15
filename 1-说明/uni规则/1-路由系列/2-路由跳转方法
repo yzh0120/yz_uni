@@ -1,0 +1,32 @@
+https://uniapp.dcloud.io/api/router
+
+<1> uni.navigateTo(OBJECT)
+	保留当前页面，跳转到应用内的某个页面，使用uni.navigateBack可以返回到原页面。
+	uni.navigateTo({
+		url : '/pages/index/two?id=navigateTo'
+	})
+	
+<2> uni.redirectTo(OBJECT)
+	关闭当前页面，跳转到应用内的某个页面。
+	uni.redirectTo({
+		url : '/pages/index/two?id=redirectTo'
+	})
+	
+<3> uni.reLaunch(OBJECT)
+	关闭所有页面，打开到应用内的某个页面。
+	uni.reLaunch({
+		url : '/pages/index/two?id=reLaunch'
+	})
+	
+<4> uni.switchTab(OBJECT)
+	当前不必是 tabBar 然后跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。不可以在跳转的时候传递参数
+	
+<5> uni.navigateBack(OBJECT)
+	关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层。
+	uni.navigateBack({//返回页面栈两层
+	    delta: 2
+	});
+	const getCurrentPages = getCurrentPages()
+
+
+https://uniapp.dcloud.io/frame?id=%e9%a1%b5%e9%9d%a2%e6%a0%88

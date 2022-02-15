@@ -1,0 +1,32 @@
+1 -    夜神模拟器
+D:\Program Files\Nox\bin>adb connect 127.0.0.1:62001
+
+2 -
+adb devices
+
+
+3 - 配置hx连接相同的端口
+工具 - 设置 - 运行配置 
+ adb路径  D:/install/HBuilderX/plugins/launcher/tools/adbs/adb.exe
+ 安卓模拟器端口   62001
+ 
+ 
+ 逍遥
+ D:\Program Files\Microvirt\MEmu/adb.exe
+ 
+ 21503
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ [每天进步一点点~] uni-app 将app运行在夜神安卓模拟器
+ https://www.jianshu.com/p/9e23cefccb2d
+ 
+ uni-app开发之模拟器配置
+ https://segmentfault.com/a/1190000020708899?utm_source=tag-newest

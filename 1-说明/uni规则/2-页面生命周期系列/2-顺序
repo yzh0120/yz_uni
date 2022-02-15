@@ -1,0 +1,14 @@
+应用-onLaunch-启动
+应用-onShow-显示
+
+beforeCreate
+
+页面-onLoad-加载
+页面-onShow-显示
+
+created
+beforeMount
+
+页面-onReady-页面初次渲染完成
+
+mounted

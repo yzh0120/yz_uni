@@ -1,0 +1,2 @@
+确保HBuilderX 2.5.1以上版本
+在manifest.json可视化视图-App其他常用设置里勾选v3编译器，或者源码视图里的app-plus节点下添加"compilerVersion": 3即可开启V3，体验畅爽的App端开发。
