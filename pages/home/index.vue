@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<page>
 		index
 		<!-- <u-button type="primary" text="确定" @click="login"></u-button> -->
-	</div>
+	</page>
 </template>
 
 <script>

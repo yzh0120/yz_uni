@@ -1,7 +1,4 @@
 <template>
-	<div class="page">
-		<slot></slot>
-	</div>
 </template>
 
 <script>
@@ -10,5 +7,5 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>

@@ -30,6 +30,12 @@ Vue.prototype.$api = index
 //vuex
 import store from './add/vuex/store.js'
 
+//基础的自定义组件
+import * as baseComponents from '@/components/index'
+Object.keys(baseComponents).forEach(key => {
+  Vue.use(baseComponents[key])
+})
+
 
 const app = new Vue({
 	store,
