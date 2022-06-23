@@ -26,6 +26,9 @@ Vue.use(uView);
 import  index   from './add/http/index.js'
 Vue.prototype.$api = index
 
+//全局mixin
+import mixinDemo from './add/mixin/mixinDemo.js'
+Vue.mixin(mixinDemo)
 
 //vuex
 import store from './add/vuex/store.js'
