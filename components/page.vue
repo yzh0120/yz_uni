@@ -1,5 +1,5 @@
 <template>
-	<div class="page">
+	<div class="my-page">
 		<slot></slot>
 	</div>
 </template>
@@ -11,4 +11,7 @@
 </script>
 
 <style>
+	.my-page{
+		padding: 10px 20px;
+	}
 </style>

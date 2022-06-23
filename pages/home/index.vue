@@ -1,29 +1,60 @@
 <template>
 	<page>
-		index
-		<!-- <u-button type="primary" text="确定" @click="login"></u-button> -->
+
 	</page>
 </template>
 
 <script>
-	export default{
-		// onShow(){
-		// 	this.$Router.pushTab(
-		// 		{ path: '/pages/home/list', query: { plan: 'private' }}
-		// 	)
-		// },
-		methods:{
-			// login(){
-			// 	let	data={
-			// 			username:'system',
-			// 			password:"123456"
-			// 		}
-			// 	this.$api.demo.login(data).then((res)=>{
-					
-			// 	})
-			// }
-			
-			login(){
+export default {
+	data() {
+		return {
+			showSex: false,
+			model1: {
+				userInfo: {
+					name: 'uView UI',
+					sex: '',
+				},
+			},
+			actions: [{
+				name: '男',
+				},
+				{
+					name: '女',
+				},
+				{
+					name: '保密',
+				},
+			],
+			rules: {
+				'userInfo.name': {
+					type: 'string',
+					required: true,
+					message: '请填写姓名',
+					trigger: ['blur', 'change']
+				},
+				'userInfo.sex': {
+					type: 'string',
+					max: 1,
+					required: true,
+					message: '请选择男或女',
+					trigger: ['blur', 'change']
+				},
+			},
+			radio: '',
+			switchVal: false
+		};
+	},
+	methods: {
+		sexSelect(e) {
+			this.model1.userInfo.sex = e.name
+			this.$refs.form1.validateField('userInfo.sex')
+		},
+	},
+};
+</script>
+
+<!-- 
+login(){
 				let other = {
 				  code: {
 				    successCode: 300,
@@ -47,43 +78,5 @@
 							})
 				  }
 				);
-			}
-			
-			// login(){
-			// 	let other = {
-			// 	  tip: "确认?",
-			// 	};
-			// 	//点击取消 会 执行第二个函数, 因为会触发catch，所以有tip的请求 必须判断 err 是不是 cancel
-			// 	this.$api.demo.twoHundred({}, other).then(
-			// 	  (res) => {
-			// 		uni.showToast({
-			// 		    title: JSON.stringify(res),
-			// 		    duration: 2000,
-			// 			mask:true
-			// 		})
-					
-			// 	  },
-			// 	  (err) => {
-			// 	    if (err == "cancel") {
-					  
-			// 		  uni.showToast({
-			// 		      title: "用户点击了取消按钮",
-			// 		      duration: 2000,
-			// 		  	mask:true
-			// 		  })
-			// 	    } else {
-			// 	      uni.showToast({
-			// 	          title: JSON.stringify(err),
-			// 	          duration: 2000,
-			// 	      	mask:true
-			// 	      })
-			// 	    }
-			// 	  }
-			// 	);
-			// }
-		}
-	}
-</script>
-
-<style>
-</style>
+			} 
+ -->
