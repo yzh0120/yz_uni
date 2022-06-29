@@ -1,0 +1,1 @@
+<view class="_div"><u-button vue-id="566e1901-1" type="primary" data-event-opts="{{[['^click',[['delToken']]]]}}" bind:click="__e" bind:__l="__l" vue-slots="{{['default']}}">删除token</u-button></view>

@@ -32,7 +32,7 @@ router.beforeEach((to, from, next) => {
   	} else { //有token 去非登录页 
   		if(!store.state.user.userInfo.username){//説明未登錄
 				//token 在头部
-				api.demo.get_user({token:uni.getStorageSync("token")},{}).then((res)=>{
+				api.demo.get_user({},{}).then((res)=>{
 					store.commit("user/userInfo_fn", res.data) //保存用户信息到 vuex
 					next(`/pages/home/index`)
 				})

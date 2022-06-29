@@ -1,0 +1,1 @@
+<view class="my-page _div"><slot></slot></view>
