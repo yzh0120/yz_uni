@@ -57,7 +57,7 @@
 					
 					uni.setStorageSync("token",res.data.token)
 					// this.$store.commit("user/userInfo_fn", res.data) //保存用户信息到 vuex
-					this.$Router.push({
+					this.$Router.pushTab({
 						path: '/pages/home/index'
 					})
 					
