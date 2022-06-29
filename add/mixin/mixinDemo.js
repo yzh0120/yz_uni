@@ -1,8 +1,5 @@
 export default{
-		mounted(){
-			console.log("mixin")
+		onLoad(){
+			console.log("onLoad")
 		},
-		methods:{
-
-		}
 	}

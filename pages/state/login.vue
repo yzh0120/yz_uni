@@ -52,7 +52,7 @@
 			});
 		},
 		methods:{
-			submit(){
+			submit(){ 
 				this.$api.demo.login(this.userInfo).then((res)=>{
 					
 					uni.setStorageSync("token",res.data.token)
