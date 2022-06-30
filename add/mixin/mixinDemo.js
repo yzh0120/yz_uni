@@ -5,6 +5,7 @@ export default{
 			console.log("onLoad")
 		},
 		onShow(){
+			// console.log('lllllllllllllllllllllllllllll')
 			//#ifdef MP-WEIXIN
 				if (uni.getStorageSync("token")) { //如果浏览器有token
 					if (this.$Route.path === '/pages/state/login') { //如果去登录页 直接跳转首页

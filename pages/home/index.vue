@@ -5,7 +5,9 @@
 </template>
 
 <script>
+	import mixinDemo from "@/add/mixin/mixinDemo.js"
 export default {
+	mixins:[mixinDemo],
 	data() {
 		return {
 
