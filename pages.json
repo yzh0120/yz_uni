@@ -18,6 +18,13 @@
 			}
 		},
 		{
+			"path": "pages/home/filter",
+			"name":"pages/home/filter",
+			"style": {
+				"navigationBarTitleText": "筛选"
+			}
+		},
+		{
 			"path": "pages/state/login",
 			"name":"pages/state/login",
 			"style": {

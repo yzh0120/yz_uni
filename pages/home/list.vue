@@ -2,6 +2,7 @@
 	<div>
 		<u-button type="primary" @click="delToken">删除token</u-button>
 		<u-button type="primary" @click="goIndex">去首页</u-button>
+		<u-button type="primary" @click="goFilter">筛选</u-button>
 	</div>
 </template>
 
@@ -19,6 +20,11 @@
 			goIndex(){
 				this.$Router.pushTab({
 					path: '/pages/home/index'
+				})
+			},
+			goFilter(){
+				this.$Router.push({
+					path: '/pages/home/filter'
 				})
 			}
 		}
