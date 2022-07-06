@@ -3,10 +3,10 @@ import Vue from 'vue'
 import Router from 'uni-simple-router'
 
 //vuex
-import store from '@/add/vuex/store' 
+import store from '@/utils/vuex/store' 
 
 //api
-import  api   from '@/add/http/index.js'
+import  api   from '@/utils/http/index.js'
 
 Vue.use(Router)
 //初始化
@@ -14,7 +14,7 @@ const router = new Router({
     routes:ROUTES //路由表
 });
 
-let whiteListName = ["pages/state/login", "pages/state/404", "pages/state/401"] //白名单
+let whiteListName = ["/pages/state/login", "/pages/state/404", "/pages/state/401"] //白名单
 
 /* 
 params: {}
@@ -24,6 +24,7 @@ query: {}
 //全局路由前置守卫
 //#ifndef MP-WEIXIN
 router.beforeEach((to, from, next) => {
+	// console.log(1)
   if (uni.getStorageSync("token")) { //如果浏览器有token
 
   	// if(true){

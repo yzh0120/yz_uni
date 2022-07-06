@@ -23,7 +23,7 @@ import uView from "uview-ui";
 Vue.use(uView);
 
 // import api from "@/axios/index"
-import  index   from './add/http/index.js'
+import  index   from './utils/http/index.js'
 Vue.prototype.$api = index
 
 //全局mixin
@@ -31,7 +31,7 @@ Vue.prototype.$api = index
 // Vue.mixin(mixinDemo)
 
 //vuex
-import store from './add/vuex/store.js'
+import store from './utils/vuex/store.js'
 
 //基础的自定义组件
 import * as baseComponents from '@/components/index'
