@@ -27,8 +27,8 @@ import  index   from './utils/http/index.js'
 Vue.prototype.$api = index
 
 //全局mixin
-// import mixinDemo from './add/mixin/mixinDemo.js'
-// Vue.mixin(mixinDemo)
+// import mixin from './add/mixin/mixin.js'
+// Vue.mixin(mixin)
 
 //vuex
 import store from './utils/vuex/store.js'

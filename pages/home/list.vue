@@ -7,11 +7,11 @@
 </template>
 
 <script>
-	import mixinDemo from "@/utils/mixin/mixinDemo.js"
+	import mixin from "@/utils/mixin/mixin.js"
 	export default{
 		mixins:[
 			//#ifdef MP-WEIXIN
-			mixinDemo
+			mixin
 			//#endif
 			],
 		onLoad(){
